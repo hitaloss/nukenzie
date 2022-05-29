@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+.card-positive {
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 17px 15px;
+  height: 6rem;
+  border-radius: 4px;
+  border-left: 4px solid #03b898;
+  background-color: #f8f9fa;
+  margin: 20px 0;
+}
+
+.card-negative {
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 17px 15px;
+  height: 6rem;
+  border-radius: 4px;
+  border-left: 4px solid #e9ecef;
+  background-color: #f8f9fa;
+  margin: 20px 0;
+}
+
+.card-text {
+  width: 70%;
+}
+
+.card-description {
+  color: #212529;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.card-type {
+  font-weight: 400;
+  font-size: 14px;
+  color: #5b6166;
+  margin: 20px 0;
+}
+
+.card-value {
+  font-family: "Nunito", sans-serif;
+  color: #212529;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.trash-div {
+  background-color: #e9ecef;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.trash-icon {
+  color: #5b6166;
+  font-size: 15px;
+}

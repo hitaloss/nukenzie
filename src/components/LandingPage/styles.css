@@ -1,0 +1,25 @@
+.blank-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 17px 15px;
+  height: 6rem;
+  border-radius: 4px;
+  border-left: 4px solid #e9ecef;
+  background-color: #f8f9fa;
+  margin: 20px 0;
+}
+
+.blank-div-taller {
+  background-color: #e9ecef;
+  height: 0.875rem;
+  width: 50%;
+}
+
+.blank-div-smaller {
+  background-color: #e9ecef;
+  height: 0.875rem;
+  width: 15%;
+}
