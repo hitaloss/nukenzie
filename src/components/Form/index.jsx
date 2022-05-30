@@ -1,12 +1,20 @@
 import { useState } from "react";
 import "./styles.css";
 
-function Form({ listTransactions, setListTransactions }) {
+function Form({ listTransactions, setListTransactions, setProfit }) {
   const [description, setDescription] = useState();
   const [value, setValue] = useState();
   const [transaction, setTransaction] = useState("Entrada");
   const addTransaction = () => {
     setListTransactions([
+      ...listTransactions,
+      {
+        description: description,
+        type: transaction,
+        value: Number(value),
+      },
+    ]);
+    setProfit([
       ...listTransactions,
       {
         description: description,

@@ -72,3 +72,28 @@
   margin: 9rem auto;
   transform: scale(1.5);
 }
+
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .container-text {
+    text-align: center;
+    align-items: center;
+  }
+
+  .container-text-info {
+    width: 90%;
+  }
+
+  #root > div {
+    width: 90%;
+  }
+
+  .nukenzie-logo {
+    margin: 0;
+    transform: scale(1);
+    width: 14rem;
+  }
+}

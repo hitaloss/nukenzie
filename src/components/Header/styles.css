@@ -20,3 +20,9 @@ header {
   font-family: "Nunito", sans-serif;
   color: black;
 }
+
+@media (max-width: 1000px) {
+  header {
+    gap: 1rem;
+  }
+}

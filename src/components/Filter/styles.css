@@ -50,3 +50,15 @@
   width: 40%;
   justify-content: space-between;
 }
+
+@media (max-width: 1000px) {
+  .buttons {
+    width: 100%;
+    margin: 1rem 0;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .filter-container {
+    flex-direction: column;
+  }
+}

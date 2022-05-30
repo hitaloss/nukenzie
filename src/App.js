@@ -9,10 +9,12 @@ import List from "./components/List";
 function App() {
   const [listTransactions, setListTransactions] = useState([]);
   const [initialize, setInitialize] = useState(false);
+  const [profit, setProfit] = useState([]);
 
   const handleTransaction = (transaction) => {
     const filter = listTransactions.filter((item) => item !== transaction);
-    return setListTransactions(filter);
+    setListTransactions(filter);
+    setProfit(filter);
   };
 
   return initialize ? (
@@ -23,18 +25,16 @@ function App() {
           <Form
             listTransactions={listTransactions}
             setListTransactions={setListTransactions}
+            setProfit={setProfit}
           />
         </section>
         <section className="right-section">
-          <Filter
-            listTransactions={listTransactions}
-            setListTransactions={setListTransactions}
-          />
+          <Filter listTransactions={listTransactions} setProfit={setProfit} />
           <ul className="card-container">
-            {listTransactions.length > 0 ? (
+            {profit.length > 0 ? (
               <List
                 handleTransaction={handleTransaction}
-                listTransactions={listTransactions}
+                listTransactions={profit}
               />
             ) : (
               <>
