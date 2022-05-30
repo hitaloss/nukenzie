@@ -31,24 +31,6 @@ function Form({ listTransactions, setListTransactions, setProfit }) {
     } else {
       toast.error("Valor inválido");
     }
-    // value > 0
-    //   ? setListTransactions([
-    //       ...listTransactions,
-    //       {
-    //         description: description,
-    //         type: transaction,
-    //         value: Number(value),
-    //       },
-    //     ])
-    //     setProfit([
-    //       ...listTransactions,
-    //       {
-    //         description: description,
-    //         type: transaction,
-    //         value: Number(value),
-    //       },
-    //     ]);
-    //   : toast.error("Valor inválido");
   };
   const totalMoney = listTransactions.reduce(
     (acc, currentvalue) =>
