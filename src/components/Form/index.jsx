@@ -1,27 +1,54 @@
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
+
 import "./styles.css";
 
 function Form({ listTransactions, setListTransactions, setProfit }) {
   const [description, setDescription] = useState();
   const [value, setValue] = useState();
   const [transaction, setTransaction] = useState("Entrada");
+
   const addTransaction = () => {
-    setListTransactions([
-      ...listTransactions,
-      {
-        description: description,
-        type: transaction,
-        value: Number(value),
-      },
-    ]);
-    setProfit([
-      ...listTransactions,
-      {
-        description: description,
-        type: transaction,
-        value: Number(value),
-      },
-    ]);
+    if (value > 0) {
+      setListTransactions([
+        ...listTransactions,
+        {
+          description: description,
+          type: transaction,
+          value: Number(value),
+        },
+      ]);
+      setProfit([
+        ...listTransactions,
+        {
+          description: description,
+          type: transaction,
+          value: Number(value),
+        },
+      ]);
+      toast.success("Valor adicionado");
+    } else {
+      toast.error("Valor inválido");
+    }
+    // value > 0
+    //   ? setListTransactions([
+    //       ...listTransactions,
+    //       {
+    //         description: description,
+    //         type: transaction,
+    //         value: Number(value),
+    //       },
+    //     ])
+    //     setProfit([
+    //       ...listTransactions,
+    //       {
+    //         description: description,
+    //         type: transaction,
+    //         value: Number(value),
+    //       },
+    //     ]);
+    //   : toast.error("Valor inválido");
   };
   const totalMoney = listTransactions.reduce(
     (acc, currentvalue) =>
@@ -87,6 +114,17 @@ function Form({ listTransactions, setListTransactions, setProfit }) {
           <span>R$ {totalMoney}</span>
         </div>
       </section>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }

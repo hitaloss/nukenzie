@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 import Filter from "./components/Filter";
 import Form from "./components/Form";
 import Header from "./components/Header";
@@ -47,6 +49,17 @@ function App() {
           </ul>
         </section>
       </main>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   ) : (
     <HomePage setInitialize={setInitialize} />
