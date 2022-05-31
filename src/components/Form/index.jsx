@@ -5,9 +5,15 @@ import "react-toastify/dist/ReactToastify.min.css";
 import "./styles.css";
 
 function Form({ listTransactions, setListTransactions, setProfit }) {
-  const [description, setDescription] = useState();
+  const [description, setDescription] = useState("");
   const [value, setValue] = useState();
   const [transaction, setTransaction] = useState("Entrada");
+
+  const clear = () => {
+    setDescription("");
+    setValue("");
+    setTransaction("Entrada");
+  };
 
   const addTransaction = () => {
     if (value > 0) {
@@ -35,8 +41,8 @@ function Form({ listTransactions, setListTransactions, setProfit }) {
   const totalMoney = listTransactions.reduce(
     (acc, currentvalue) =>
       currentvalue.type === "Entrada"
-        ? (acc += currentvalue.value)
-        : (acc -= currentvalue.value),
+        ? (acc += parseInt(currentvalue.value))
+        : (acc -= parseInt(currentvalue.value)),
     0
   );
   return (
@@ -50,6 +56,7 @@ function Form({ listTransactions, setListTransactions, setProfit }) {
           <input
             className="form-input"
             type="text"
+            value={description}
             placeholder="Digite aqui sua descrição"
             onChange={(event) => setDescription(event.target.value)}
           />
@@ -61,6 +68,7 @@ function Form({ listTransactions, setListTransactions, setProfit }) {
             <div className="background">
               <input
                 type="number"
+                value={value}
                 placeholder="1"
                 onChange={(event) => setValue(event.target.value)}
               />
@@ -82,7 +90,11 @@ function Form({ listTransactions, setListTransactions, setProfit }) {
           </div>
         </section>
         <section>
-          <button className="form-btn" type="submit">
+          <button
+            onClick={() => setTimeout(() => clear(), 200)}
+            className="form-btn"
+            type="submit"
+          >
             Inserir Valor
           </button>
         </section>
